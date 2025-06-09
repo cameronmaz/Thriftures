@@ -1,0 +1,238 @@
+.app-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  max-width: 100%;
+  gap: 8px; /* Add gap between sections */
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced from 12px to 8px */
+  min-width: 0;
+  flex: 0 0 auto;
+  max-width: 40%; /* Limit width to prevent overflow */
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 8px; /* Reduced padding */
+  max-width: 60%; /* Limit center width */
+}
+
+.app-branding {
+  text-align: center;
+  min-width: 0;
+  overflow: hidden; /* Prevent text overflow */
+}
+
+.app-title {
+  font-size: 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #14b8a6;
+  margin: 0 0 2px 0;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-subtitle {
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.header-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  color: #14b8a6;
+}
+
+.back-button {
+  background-color: #f3f4f6;
+}
+
+.back-button:hover {
+  background-color: #e5e7eb;
+}
+
+/* PREMIUM CROWN BUTTON - EXACT COPY OF HEADER BUTTON WITH GOLD CROWN */
+.premium-crown-button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.premium-crown-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  color: #14b8a6;
+}
+
+/* FORCE CROWN TO STAY GOLD */
+.premium-crown-button svg {
+  color: #f59e0b !important;
+  fill: #f59e0b !important;
+  stroke: #f59e0b !important;
+}
+
+.premium-crown-button:hover svg {
+  color: #f59e0b !important;
+  fill: #f59e0b !important;
+  stroke: #f59e0b !important;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 10px 16px;
+    gap: 6px; /* Smaller gap on mobile */
+  }
+  
+  .header-left,
+  .header-right {
+    gap: 6px; /* Reduced gap on mobile */
+    max-width: 35%; /* Slightly smaller on mobile */
+  }
+  
+  .header-center {
+    padding: 0 8px;
+    max-width: 50%; /* Smaller center on mobile */
+  }
+  
+  .app-title {
+    font-size: 20px;
+  }
+  
+  .app-subtitle {
+    font-size: 12px;
+  }
+  
+  .header-button,
+  .premium-crown-button {
+    padding: 8px;
+    min-width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 8px 12px;
+    gap: 4px; /* Even smaller gap */
+  }
+  
+  .header-left,
+  .header-right {
+    gap: 4px; /* Minimal gap on small screens */
+    max-width: 30%; /* Even smaller on very small screens */
+  }
+  
+  .header-center {
+    padding: 0 6px;
+    max-width: 40%; /* Much smaller center */
+  }
+  
+  .app-title {
+    font-size: 18px;
+  }
+  
+  .app-subtitle {
+    font-size: 11px;
+  }
+  
+  .header-button,
+  .premium-crown-button {
+    padding: 6px;
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+/* Special handling for very small screens with many buttons */
+@media (max-width: 400px) {
+  .header-content {
+    padding: 6px 8px;
+  }
+  
+  .header-left,
+  .header-right {
+    gap: 2px; /* Minimal gap */
+    max-width: 25%; /* Very small on tiny screens */
+  }
+  
+  .header-center {
+    max-width: 50%; /* Larger center on tiny screens */
+  }
+  
+  .app-title {
+    font-size: 16px;
+  }
+  
+  .app-subtitle {
+    font-size: 10px;
+  }
+  
+  .header-button,
+  .premium-crown-button {
+    padding: 4px;
+    min-width: 32px;
+    height: 32px;
+  }
+  
+  /* Hide subtitle on very small screens to save space */
+  .app-subtitle {
+    display: none;
+  }
+}
